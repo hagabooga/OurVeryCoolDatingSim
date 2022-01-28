@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace CameronsWorld
 {
-    public partial class Spotlight : Singleton<Spotlight>, ICoroutiner
+    public partial class Spotlight : Singleton<Spotlight>
     {
         [SerializeField] Canvas realWorld;
         [SerializeField] Canvas redWorld;
