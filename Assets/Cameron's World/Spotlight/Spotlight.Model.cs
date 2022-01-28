@@ -9,6 +9,7 @@ namespace CameronsWorld
             public event Action OnUseChanged;
 
             public int Uses { get; private set; }
+            public float VignetteIntensity { get; set; } = 0.5f;
 
             public Model(int uses)
             {

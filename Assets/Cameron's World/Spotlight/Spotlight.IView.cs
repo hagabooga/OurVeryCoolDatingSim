@@ -6,11 +6,17 @@ namespace CameronsWorld
     {
         public interface IView
         {
+            float VignetteIntensity { get; set; }
+
             void ToggleLensActive(bool yes);
             void ToggleLensEffectsActive(bool yes);
             void ToggleRealWorldActive(bool yes);
             void ToggleRedWorldActive(bool yes);
-            void SetLensPosition(Vector2 vector2);
+
+            void SetLensGlobalPosition(Vector2 vector2);
+            void SetRedWorldPosition(Vector3 vector3);
+
+            Vector2 RedWorldGlobalPosition { get; }
         }
     }
 }
