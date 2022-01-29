@@ -38,6 +38,14 @@ namespace CameronsWorld
                 }
             }
 
+            public Vector2 RedWorldGlobalPosition => RedWorld.transform.position;
+
+            public float VignetteIntensity
+            {
+                get => Vignette.intensity.value;
+                set => Vignette.intensity.value = value;
+            }
+
             public void ToggleRealWorldActive(bool yes)
             {
                 RealWorld.gameObject.SetActive(yes);
@@ -68,13 +76,7 @@ namespace CameronsWorld
                 RedWorld.transform.position = vector3;
             }
 
-            public Vector2 RedWorldGlobalPosition => RedWorld.transform.position;
 
-            public float VignetteIntensity
-            {
-                get => Vignette.intensity.value;
-                set => Vignette.intensity.value = value;
-            }
         }
     }
 }

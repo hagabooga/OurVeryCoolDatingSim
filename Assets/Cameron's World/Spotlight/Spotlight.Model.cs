@@ -9,11 +9,14 @@ namespace CameronsWorld
             public event Action OnUseChanged;
 
             public int Uses { get; private set; }
-            public float VignetteIntensity { get; set; } = 0.5f;
+            public float VignetteIntensity { get; }
+            public float TransitionDuration { get; }
 
-            public Model(int uses)
+            public Model(int uses, float vignetteIntensity, float transitionDuration)
             {
                 Uses = uses;
+                VignetteIntensity = vignetteIntensity;
+                TransitionDuration = transitionDuration;
             }
 
             public void AddUse(int amount = 1)
