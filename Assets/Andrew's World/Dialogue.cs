@@ -9,10 +9,23 @@ public class Dialogue : MonoBehaviour
 {
     
     private float letterDisplayDelay = 0.025f; // speed of letter scroll; decrease to quicken
-    [SerializeField] private string dialogueText;
+    [SerializeField] private string realWorldDialogueText;
+    [SerializeField] private string thoughtWorldDialogueText;
     [SerializeField] private GameObject succeedingDialogue;
-    [SerializeField] private TextMeshProUGUI textBoxText = null;
-    [SerializeField] private GameObject continueButton = null;
+    [SerializeField] private bool fadesIn = false;
+    [SerializeField] private bool fadesOut = false;
+    [SerializeField] private GlobalVars.Character currentSpeaker;
+
+    // references to components
+    [SerializeField] private TextMeshProUGUI realWorldTextBoxText = null;
+    [SerializeField] private TextMeshProUGUI thoughtWorldTextBoxText = null;
+
+    [SerializeField] private GameObject realWorldContinueButton = null;
+    [SerializeField] private GameObject thoughtWorldContinueButton = null;
+    [SerializeField] private GameObject realWorldBlackPanel;
+    [SerializeField] private GameObject thoughtWorldBlackPanel;
+    [SerializeField] private TextMeshProUGUI realWorldNamePlaque;
+    [SerializeField] private TextMeshProUGUI thoughtWorldNamePlaque;
     private DialogueActions dialogueActions;
     private float currentLetterDisplayDelay = 0f;
     private void Awake() {
@@ -28,27 +41,78 @@ public class Dialogue : MonoBehaviour
         currentLetterDisplayDelay = letterDisplayDelay;
         StartCoroutine(DisplayDialogue());
         dialogueActions.DialogueBox.Continue.performed += InteractOnDialogue;
+
+        // fade transition
+        if (fadesIn) {
+            thoughtWorldBlackPanel.SetActive(true);
+            thoughtWorldBlackPanel.GetComponent<Animator>().SetTrigger("fadeIn");
+            realWorldBlackPanel.SetActive(true);
+            realWorldBlackPanel.GetComponent<Animator>().SetTrigger("fadeIn");
+        }
+
+        // name plaque assignment
+        thoughtWorldNamePlaque.SetText(GlobalVars.GetCharacterName(currentSpeaker));
+        realWorldNamePlaque.SetText(GlobalVars.GetCharacterName(currentSpeaker));
     }
     public IEnumerator DisplayDialogue() {
-        continueButton.SetActive(false);
-        string curText = "";
-        for (int i = 0; i < dialogueText.Length; i++) {
-            curText += dialogueText[i];
-            textBoxText.SetText(curText);
+        thoughtWorldContinueButton.SetActive(false);
+        realWorldContinueButton.SetActive(false);
+
+        string realWorldText = "";
+        string thoughtWorldText = "";
+        int minLength = realWorldDialogueText.Length > thoughtWorldDialogueText.Length ? thoughtWorldDialogueText.Length : realWorldDialogueText.Length;
+        for (int i = 0; i < minLength; i++) {
+            realWorldText += realWorldDialogueText[i];
+            thoughtWorldText += thoughtWorldDialogueText[i];
+            realWorldTextBoxText.SetText(realWorldText);
+            thoughtWorldTextBoxText.SetText(thoughtWorldText);
             yield return new WaitForSeconds(currentLetterDisplayDelay);
         }
+        if (realWorldDialogueText.Length > thoughtWorldDialogueText.Length)
+        {
+            for (int i = minLength + 1; i < realWorldDialogueText.Length; i++)
+            {
+                realWorldText += realWorldDialogueText[i];
+                realWorldTextBoxText.SetText(realWorldText);
+                yield return new WaitForSeconds(currentLetterDisplayDelay);
+            }
+        } else
+        {
+            for (int i = minLength + 1; i < thoughtWorldDialogueText.Length; i++)
+            {
+                thoughtWorldText += thoughtWorldDialogueText[i];
+                thoughtWorldTextBoxText.SetText(thoughtWorldText);
+                yield return new WaitForSeconds(currentLetterDisplayDelay);
+            }
+        }
+
+        addContinueButtonIfDialogueFollows(thoughtWorldContinueButton);
+        addContinueButtonIfDialogueFollows(realWorldContinueButton);
+    }
+
+    private void addContinueButtonIfDialogueFollows(GameObject buttonToActivate)
+    {
         if (succeedingDialogue)
-            continueButton.SetActive(true);
+        {
+            buttonToActivate.SetActive(true);
+        }
     }
 
     private void InteractOnDialogue(InputAction.CallbackContext ctx) {
-        if (!continueButton.activeSelf) {
+        if (!realWorldContinueButton.activeSelf || !thoughtWorldContinueButton.activeSelf) {
             currentLetterDisplayDelay = 0f;
         } else {
             CloseDialogue();
         }
     }
     private void CloseDialogue() {
+        if (fadesOut)
+        {
+            thoughtWorldBlackPanel.SetActive(false);
+            thoughtWorldBlackPanel.GetComponent<Animator>().SetTrigger("fadeOut");
+            realWorldBlackPanel.SetActive(false);
+            realWorldBlackPanel.GetComponent<Animator>().SetTrigger("fadeOut");
+        }
         if (succeedingDialogue) {
             succeedingDialogue.SetActive(true); 
             gameObject.SetActive(false); // don't remove dialogue if user needs to make a choice
