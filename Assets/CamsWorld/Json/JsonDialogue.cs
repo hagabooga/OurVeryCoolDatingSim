@@ -12,7 +12,7 @@ namespace CameronsWorld
 
 
         public string Text { get; set; }
-        public string ThoughtWorld { get; set; }
+        public string ThoughtWorldText { get; set; }
         public List<JsonDialogueOption> Options { get; set; } = new List<JsonDialogueOption>();
         public List<JsonDialogueOption> ThoughtWorldOptions { get; set; } = new List<JsonDialogueOption>();
 

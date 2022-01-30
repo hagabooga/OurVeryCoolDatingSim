@@ -8,9 +8,9 @@ public static class GlobalVars
     public static string MCName = "MC";
     public enum Character
     {
-        Cam,
-        Yun,
-        MC,
+        Cam = 0,
+        Yun = 1,
+        MC = 2,
     }
 
 
@@ -28,13 +28,13 @@ public static class GlobalVars
 
     public enum Background
     {
-        BlackScreen,
-        AlarmClock,
+        BlackScreen = 0,
+        AlarmClock = 1,
 
     }
 
 
-    public static string GetCharacterName(GlobalVars.Character character)
+    public static string GetCharacterName(GlobalVars.Character? character)
     {
         switch (character)
         {

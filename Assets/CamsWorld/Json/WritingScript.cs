@@ -29,7 +29,7 @@ namespace CameronsWorld
             public Dialogue GetNext()
             {
                 var current = GetCurrent();
-                if (AwaitingOption == 0 && (current.Options.Count != 0 || current.Options.Count != 0))
+                if (AwaitingOption == 0 && (current.Options.Count != 0 || current.ThoughtWorldOptions.Count != 0))
                 {
                     AwaitingOption = 1;
                     return Dialogues[Index];
@@ -87,7 +87,7 @@ namespace CameronsWorld
             }
             else
             {
-                if (currentDialogue.Options.Count != 0 || currentDialogue.Options.Count != 0)
+                if (currentDialogue.Options.Count != 0 || currentDialogue.ThoughtWorldOptions.Count != 0)
                 {
                     throw new Exception("Dialogue has options but wasnt picked!");
                 }

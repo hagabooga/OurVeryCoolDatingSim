@@ -28,7 +28,7 @@ namespace CameronsWorld
 
 
             Text = json.Text;
-            ThoughtWorldText = json.ThoughtWorld;
+            ThoughtWorldText = json.ThoughtWorldText;
             Options = json.Options.Select(x => new DialogueOption(x)).ToList();
             ThoughtWorldOptions = json.ThoughtWorldOptions.Select(x => new DialogueOption(x)).ToList();
         }
