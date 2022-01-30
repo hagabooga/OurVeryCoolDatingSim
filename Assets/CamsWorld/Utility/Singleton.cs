@@ -6,9 +6,9 @@ namespace CameronsWorld.Utility
 {
     public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
-        private T instance { get; set; }
+        private static T instance { get; set; }
 
-        public T Instance => instance;
+        public static T Instance => instance;
 
         protected virtual void Start()
         {

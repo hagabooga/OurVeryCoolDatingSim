@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using System;
 using TMPro;
 using CameronsWorld;
+using CameronsWorld.Utility;
 
 public class Dialogue : MonoBehaviour
 {
@@ -38,6 +39,17 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private List<Sprite> backgroundArtRealWorld;
     [SerializeField] private List<Sprite> backgroundArtThoughtWorld;
     [SerializeField] private List<Sprite> continueButtons; // first 3 are chars, 4th is default
+
+
+    [SerializeField] List<AudioClip> backgroundMusics;
+
+
+
+
+
+
+    [SerializeField] TheClockIsTicking theClockIsTicking;
+
 
     private DialogueActions dialogueActions;
     private float currentLetterDisplayDelay = 0f;
@@ -185,7 +197,26 @@ public class Dialogue : MonoBehaviour
         SetDialogueOptions(dialogue.Options, dialogue.ThoughtWorldOptions);
         SetDialogueSpeaker(dialogue.Speaker);
         SetDialogueBackground(dialogue.Background);
+        SetDialogueMusic(dialogue.Music);
     }
+
+    private void SetDialogueMusic(GlobalVars.Music? music)
+    {
+        if (!music.HasValue)
+        {
+            return;
+        }
+        switch (music.Value)
+        {
+            case GlobalVars.Music.Stop:
+                SoundManager.Instance.StopAll();
+                break;
+            default:
+                SoundManager.Instance.Play(backgroundMusics[((int)music.Value)]);
+                break;
+        }
+    }
+
     private void SetDialogueSpeaker(GlobalVars.Character? character)
     {
         if (character != null)
@@ -273,10 +304,12 @@ public class Dialogue : MonoBehaviour
         switch (action)
         {
             case GlobalVars.SpecialAction.Tutorial:
-                print("TUTORIAL");
                 break;
             case GlobalVars.SpecialAction.TheClockIsTicking:
+                theClockIsTicking.Activate();
                 break;
         }
     }
+
+
 }
