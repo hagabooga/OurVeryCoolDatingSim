@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -14,20 +15,25 @@ namespace CameronsWorld
             Canvas LensEffects { get; }
             Image Lens { get; }
             Volume VolumeProfile { get; }
+            public TMP_Text PhoneCount { get; }
+            public TMP_Text ThoughtPhoneCount { get; }
             Vignette Vignette { get; }
 
             public View(Canvas realWorld,
                         CanvasGroup redWorld,
                         Canvas lensEffects,
                         Image lens,
-                        Volume volumeProfile)
+                        Volume volumeProfile,
+                        TMPro.TMP_Text phoneCount,
+                        TMPro.TMP_Text thoughtPhoneCount)
             {
                 RealWorld = realWorld;
                 RedWorld = redWorld;
                 LensEffects = lensEffects;
                 Lens = lens;
                 VolumeProfile = volumeProfile;
-
+                PhoneCount = phoneCount;
+                ThoughtPhoneCount = thoughtPhoneCount;
                 if (VolumeProfile.profile.TryGet<Vignette>(out Vignette vignette))
                 {
                     Vignette = vignette;
@@ -88,6 +94,13 @@ namespace CameronsWorld
             public void ToggleRedWorldRaycast(bool yes)
             {
                 RedWorld.blocksRaycasts = yes;
+            }
+
+            public void SetPhoneCounter(int count)
+            {
+                string countString = count.ToString();
+                PhoneCount.text = countString;
+                ThoughtPhoneCount.text = countString;
             }
         }
     }

@@ -2,6 +2,7 @@ using CameronsWorld.Utility;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
+using TMPro;
 namespace CameronsWorld
 {
     public partial class Spotlight : MonoBehaviour
@@ -12,6 +13,7 @@ namespace CameronsWorld
         [SerializeField] Image lens;
         [SerializeField] Volume volume;
         [SerializeField] SpotlightModel model;
+        [SerializeField] TMP_Text phoneCount, thoughtPhoneCount;
 
 
         void Start()
@@ -20,7 +22,9 @@ namespace CameronsWorld
                                   redWorld,
                                   lensEffects,
                                   lens,
-                                  volume
+                                  volume,
+                                  phoneCount,
+                                thoughtPhoneCount
                                   );
             Presenter presenter = new Presenter(model, view, this);
         }

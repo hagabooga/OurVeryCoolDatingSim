@@ -8,7 +8,7 @@ using CameronsWorld.Utility;
 
 public class TheClockIsTicking : MonoBehaviour
 {
-    [SerializeField] Image phone;
+    [SerializeField] Image phone, thoughtPhone;
     [SerializeField] TMPro.TMP_Text count;
     [SerializeField] GameObject prompt;
 
@@ -27,6 +27,7 @@ public class TheClockIsTicking : MonoBehaviour
         yield return phone.rectTransform.DOSizeDelta(new Vector2(150, 150), 1).WaitForCompletion();
         yield return phone.rectTransform.DOAnchorPos(finalPos, 1).WaitForCompletion();
         count.gameObject.SetActive(true);
+        thoughtPhone.gameObject.SetActive(true);
         prompt.SetActive(true);
     }
 

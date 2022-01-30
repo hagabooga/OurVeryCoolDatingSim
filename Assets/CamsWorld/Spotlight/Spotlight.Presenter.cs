@@ -26,6 +26,12 @@ namespace CameronsWorld
                 View.ToggleLensImage(false);
                 RedWorldStartingPosition = View.RedWorldGlobalPosition;
                 Spotlight.StartCoroutine(Update());
+                Model.OnUseChanged += UpdatePhone;
+            }
+
+            void UpdatePhone()
+            {
+                View.SetPhoneCounter(Model.Uses);
             }
 
             IEnumerator Update()
