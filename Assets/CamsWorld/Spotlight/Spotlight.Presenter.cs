@@ -54,6 +54,7 @@ namespace CameronsWorld
                 bool isLeftShiftPressed = Input.GetKey(KeyCode.LeftShift);
                 View.ToggleLensImage(isLeftShiftPressed);
                 View.ToggleLensEffectsActive(isLeftShiftPressed);
+                View.ToggleRedWorldRaycast(isLeftShiftPressed);
                 if (isLeftShiftPressed)
                 {
                     if (!firstTimeleftShiftPressed)

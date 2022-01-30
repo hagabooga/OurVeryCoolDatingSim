@@ -84,6 +84,7 @@ namespace CameronsWorld
                 }
                 Dialogues.Push(new DialogueRecord(dialogueOptions[optionIndex.Value].Dialogues));
                 currentDialogue = Dialogues.Peek().GetNext();
+                dialogueRecord.AwaitingOption = 0;
             }
             else
             {

@@ -84,6 +84,11 @@ namespace CameronsWorld
             {
                 RedWorld.alpha = value;
             }
+
+            public void ToggleRedWorldRaycast(bool yes)
+            {
+                RedWorld.blocksRaycasts = yes;
+            }
         }
     }
 }
