@@ -8,15 +8,26 @@ namespace CameronsWorld
 {
     public class WritingScriptLoader : MonoBehaviour
     {
+        WritingScript WritingScript { get; set; }
+
         public void Start()
         {
-            var x = Load();
-            foreach (var scene in x.Scenes)
+            WritingScript = Load();
+        }
+
+        public void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.A))
             {
-                foreach (var item in scene.Dialogues)
-                {
-                    print(item.Text + " " + item.Speaker);
-                }
+                print(WritingScript.GetNext().Text);
+            }
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                print(WritingScript.GetNext(0, true).Text);
+            }
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                print(WritingScript.GetNext(0, false).Text);
             }
         }
 

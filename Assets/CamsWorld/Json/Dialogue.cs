@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CameronsWorld
 {
@@ -13,9 +14,9 @@ namespace CameronsWorld
 
 
         public string Text { get; }
-        public string ThoughtWorld { get; }
-        public IList<JsonDialogueOption> Options { get; }
-        public IList<JsonDialogueOption> ThoughtWorldOptions { get; }
+        public string ThoughtWorldText { get; }
+        public IList<DialogueOption> Options { get; }
+        public IList<DialogueOption> ThoughtWorldOptions { get; }
 
         public Dialogue(JsonDialogue json)
         {
@@ -27,9 +28,9 @@ namespace CameronsWorld
 
 
             Text = json.Text;
-            ThoughtWorld = json.ThoughtWorld;
-            Options = json.Options;
-            ThoughtWorldOptions = json.ThoughtWorldOptions;
+            ThoughtWorldText = json.ThoughtWorld;
+            Options = json.Options.Select(x => new DialogueOption(x)).ToList();
+            ThoughtWorldOptions = json.ThoughtWorldOptions.Select(x => new DialogueOption(x)).ToList();
         }
 
         private static T? GetEnum<T>(string s) where T : struct
