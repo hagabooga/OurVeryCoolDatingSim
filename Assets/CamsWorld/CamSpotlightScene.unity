@@ -944,6 +944,7 @@ MonoBehaviour:
   lensEffects: {fileID: 814536502}
   lens: {fileID: 1509342828}
   volume: {fileID: 1679555180}
+  model: {fileID: 11400000, guid: c8c2e9777e7dfa74f97f94b5ea280fd7, type: 2}
 --- !u!114 &1679555180
 MonoBehaviour:
   m_ObjectHideFlags: 0

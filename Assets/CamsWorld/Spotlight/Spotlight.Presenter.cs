@@ -10,15 +10,14 @@ namespace CameronsWorld
     {
         public class Presenter
         {
-            Model Model { get; }
+            SpotlightModel Model { get; }
             IView View { get; }
             Vector2 RedWorldStartingPosition { get; }
-
 
             bool firstTimeleftShiftPressed = false;
             IList<Tween> doOnceWhenLeftShiftPressedTweens = new List<Tween>();
 
-            public Presenter(Model model, IView view)
+            public Presenter(SpotlightModel model, IView view)
             {
                 Model = model;
                 View = view;

@@ -11,12 +11,12 @@ namespace CameronsWorld
         [SerializeField] Canvas lensEffects;
         [SerializeField] Image lens;
         [SerializeField] Volume volume;
+        [SerializeField] SpotlightModel model;
 
 
         protected override void Start()
         {
             base.Start();
-            Model model = new Model(10, 0.335f, 1);
             IView view = new View(realWorld,
                                   redWorld,
                                   lensEffects,
