@@ -1,0 +1,101 @@
+{
+    "Scenes": [
+        {
+            "Name": "Tutorial",
+            "Dialogues": [
+                {
+                    "Background": "BlackScreen",
+                    "Music": "AlarmClock",
+                    "Text": "Ah… it's monday, isn't it…"
+                },
+                {
+                    "Text": "Probably wasn't the best idea to stay up that late on a sunday. Especially with Cam staying over."
+                },
+                {
+                    "Speaker": "MC",
+                    "Background": "AlarmClock",
+                    "Text": "Ah- crap. It's already past seven. I'm gonna miss the bus-"
+                },
+                {
+                    "SpecialAction": "Tutorial",
+                    "ThoughtWorldOptions": [
+                        {
+                            "Text": "What The...",
+                            "Dialogues": [
+                                {
+                                    "Speaker": "MC",
+                                    "Text": "The hell was that? Am I on something today? Am I still dreaming…?"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Speaker": "MC",
+                    "Text": "Oh- but that reminds me. I did need to set my clock an hour backwards-"
+                },
+                {
+                    "Text": "*knock knock knock*"
+                },
+                {
+                    "Speaker": "Cam",
+                    "Text": "MC? You awake?",
+                    "ThoughtWorldText": "Would you shut that fucking thing up?"
+                },
+                {
+                    "Speaker": "MC",
+                    "Text": "Yeah- just barely."
+                },
+                {
+                    "CharacterAppear": "Cam",
+                    "Music": "Stop",
+                    "Text": "Morning, Sleepy!",
+                    "ThoughtWorldText": "Urgh… My fuckin' head…",
+                    "Options": [
+                        {
+                            "Text": "Good morning… ",
+                            "Dialogues": [
+                                {
+                                    "Speaker": "Cam",
+                                    "Text": "The hell was that? Am I on something today? Am I still dreaming…?",
+                                    "ThoughtWorldText": "Shit- did they notice?"
+                                }
+                            ]
+                        }
+                    ],
+                    "ThoughtWorldOptions": [
+                        {
+                            "Text": "…You okay?",
+                            "Dialogues": [
+                                {
+                                    "Speaker": "Cam",
+                                    "Text": "Good is right! Check out how sunny it is outside!",
+                                    "ThoughtWorldText": "I really ought to get more sleep… "
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Speaker": "Cam",
+                    "Text": "Come on, I made breakfast. They're scrambled today.",
+                    "ThoughtWorldText": "Can't you buy anything other than eggs…?"
+                },
+                {
+                    "Background": "BlackScreen"
+                },
+                {
+                    "Speaker": "Cam",
+                    "Text": "…So, I guess I can… read minds or something now? Maybe I'm just hallucinating. Wouldn't be the first time."
+                },
+                {
+                    "Speaker": "Cam",
+                    "Text": "Whatever. I'll figure this out later. Maybe I can just sleep it off. For now I'll just try not to act like an insane person."
+                },
+                {
+                    "SpecialAction": "TheClockIsTicking"
+                }
+            ]
+        }
+    ]
+}
