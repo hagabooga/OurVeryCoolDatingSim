@@ -6,7 +6,7 @@
                 {
                     "Background": "BlackScreen",
                     "Music": "AlarmClock",
-                    "Text": "Ah… it's monday, isn't it…"
+                    "Text": "Ah... it's monday, isn't it..."
                 },
                 {
                     "Text": "Probably wasn't the best idea to stay up that late on a sunday. Especially with Cam staying over."
@@ -25,7 +25,7 @@
                             "Dialogues": [
                                 {
                                     "Speaker": "MC",
-                                    "Text": "The hell was that? Am I on something today? Am I still dreaming…?"
+                                    "Text": "The hell was that? Am I on something today? Am I still dreaming...?"
                                 }
                             ]
                         }
@@ -36,6 +36,7 @@
                     "Text": "Oh- but that reminds me. I did need to set my clock an hour backwards-"
                 },
                 {
+                    "Background": "Bedroom",
                     "Text": "*knock knock knock*"
                 },
                 {
@@ -52,22 +53,22 @@
                     "CharacterAppear": "Cam",
                     "Music": "CamsTheme",
                     "Text": "Morning, Sleepy!",
-                    "ThoughtWorldText": "Urgh… My fuckin' head…",
+                    "ThoughtWorldText": "Urgh... My fuckin' head...",
                     "Options": [
                         {
-                            "Text": "Good morning…",
+                            "Text": "Good morning...",
                             "Dialogues": [
                                 {
                                     "Speaker": "Cam",
                                     "Text": "Good is right! Check out how sunny it is outside!",
-                                    "ThoughtWorldText": "I really ought to get more sleep… "
+                                    "ThoughtWorldText": "I really ought to get more sleep... "
                                 }
                             ]
                         }
                     ],
                     "ThoughtWorldOptions": [
                         {
-                            "Text": "…You okay?",
+                            "Text": "...You okay?",
                             "Dialogues": [
                                 {
                                     "Speaker": "Cam",
@@ -81,12 +82,12 @@
                 {
                     "Speaker": "Cam",
                     "Text": "Come on, I made breakfast. They're scrambled today.",
-                    "ThoughtWorldText": "Can't you buy anything other than eggs…?"
+                    "ThoughtWorldText": "Can't you buy anything other than eggs...?"
                 },
                 {
                     "Background": "BlackScreen",
                     "Speaker": "MC",
-                    "Text": "…So, I guess I can… read minds or something now? Maybe I'm just hallucinating. Wouldn't be the first time."
+                    "Text": "...So, I guess I can... read minds or something now? Maybe I'm just hallucinating. Wouldn't be the first time."
                 },
                 {
                     "Speaker": "MC",
@@ -95,6 +96,254 @@
                 {
                     "Speaker": "MC",
                     "SpecialAction": "TheClockIsTicking"
+                },
+                {
+                    "Speaker": "MC",
+                    "SpecialAction": "RemoveCharacters",
+                    "Text": ""
+                }
+            ]
+        },
+        {
+            "Name": "Outside School - Morning",
+            "Dialogues": [
+                {
+                    "CharacterAppear": "Cam",
+                    "Background": "OutsideSchool",
+                    "Speaker": "Cam",
+                    "Text": "Waah~! What a nice day. Good to get something other than rain, huh?",
+                    "ThoughtWorldText": "The sun's in my eyes..."
+                },
+                {
+                    "Speaker": "Cam",
+                    "Text": "...Hey, Valentine's is coming up, right?",
+                    "ThoughtWorldText": "...Should I ask him...?"
+                },
+                {
+                    "Speaker": "Cam",
+                    "Text": "Do you... have any plans?",
+                    "ThoughtWorldText": "No, it's just a ploy to sell chocolates once a year. Don't let it get to you.",
+                    "Options": [
+                        {
+                            "Text": "Not particularly.",
+                            "Dialogues": [
+                                {
+                                    "Speaker": "Cam",
+                                    "Text": "Oh? That's a shame.",
+                                    "ThoughtWorldText": "Phew..."
+                                },
+                                {
+                                    "Speaker": "MC",
+                                    "Text": "Maybe next year."
+                                }
+                            ]
+                        },
+                        {
+                            "Text": "Maybe...?",
+                            "Dialogues": [
+                                {
+                                    "Speaker": "Cam",
+                                    "Text": "Ohoo~ a date?",
+                                    "ThoughtWorldText": "Hah...?"
+                                },
+                                {
+                                    "Speaker": "MC",
+                                    "Text": "Uh... I'm still working on it."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Speaker": "Cam",
+                    "Text": "Ah. I see.",
+                    "ThoughtWorldText": "Wait- maybe it's because of me...? No. No No No- Stop thinking about it."
+                },
+                {
+                    "Speaker": "Cam",
+                    "Text": "Ah. I see.",
+                    "ThoughtWorldText": "Wait- maybe it's because of me...? No. No No No- Stop thinking about it."
+                },
+                {
+                    "Speaker": "Cam",
+                    "Text": "...",
+                    "ThoughtWorldText": "Should- Should I ask him?"
+                },
+                {
+                    "Speaker": "Cam",
+                    "Text": "Hey- MC...",
+                    "ThoughtWorldText": "No, No No, No. Stop. Stop stop stop stop stop."
+                },
+                {
+                    "Speaker": "Cam",
+                    "Text": "Is there... Anyone you like?",
+                    "ThoughtWorldText": "AAAAAAAAAAAAAAAAUUUUUGH",
+                    "Options": [
+                        {
+                            "Text": "No",
+                            "Dialogues": [
+                                {
+                                    "Speaker": "Cam",
+                                    "Text": "Oh... Is that so...?.",
+                                    "ThoughtWorldText": "..."
+                                },
+                                {
+                                    "Speaker": "Cam",
+                                    "Text": "...",
+                                    "ThoughtWorldText": "..."
+                                }
+                            ]
+                        },
+                        {
+                            "Text": "Yes",
+                            "Dialogues": [
+                                {
+                                    "Speaker": "Cam",
+                                    "Text": "Oh... Is that so...?.",
+                                    "ThoughtWorldText": "..."
+                                },
+                                {
+                                    "Speaker": "Cam",
+                                    "Text": "...",
+                                    "ThoughtWorldText": "..."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Speaker": "Yun",
+                    "Text": "MC!",
+                    "ThoughtWorldText": "Ah- There they are."
+                },
+                {
+                    "Speaker": "MC",
+                    "Text": "I could recognize that voice anywhere. I'm still baffled that she'd want anything to do with me, with how popular she is."
+                },
+                {
+                    "Speaker": "Yun",
+                    "CharacterAppear": "Yun",
+                    "Text": "Good morning, MC. It's good to see you.",
+                    "ThoughtWorldText": "Ahh. Should I compliment them…?"
+                },
+                {
+                    "Speaker": "Cam",
+                    "Text": "Heya, Yun!",
+                    "ThoughtWorldText": "God, not this bitch."
+                },
+                {
+                    "Speaker": "Yun",
+                    "Text": "How are you?",
+                    "ThoughtWorldText": "How are you?",
+                    "Options": [
+                        {
+                            "Text": "Good.",
+                            "Dialogues": [
+                                {
+                                    "Speaker": "Yun",
+                                    "Text": "I'm glad to hear it.",
+                                    "ThoughtWorldText": "I'm glad to hear it."
+                                },
+                                {
+                                    "Speaker": "Yun",
+                                    "Text": "Hope you got a good sleep.",
+                                    "ThoughtWorldText": "She's so lucky. Must be nice to be that close…"
+                                }
+                            ]
+                        }
+                    ],
+                    "ThoughtWorldOptions": [
+                        {
+                            "Text": "Uhh- Good. Y-yeah. Good.",
+                            "Dialogues": [
+                                {
+                                    "Speaker": "Yun",
+                                    "Text": "I'm… Glad to hear that.",
+                                    "ThoughtWorldText": "Hm…? Stuttering? Did something happen?"
+                                },
+                                {
+                                    "Speaker": "Yun",
+                                    "Text": "You're sure right? You look a little pale.",
+                                    "ThoughtWorldText": "I'm here to help anytime, you know."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Speaker": "Yun",
+                    "Text": "Say, MC. Are you doing anything tonight? ",
+                    "ThoughtWorldText": "Ah- I know."
+                },
+                {
+                    "Speaker": "Yun",
+                    "Text": "My shift got cancelled tonight, so I thought maybe we could hang out.",
+                    "ThoughtWorldText": "My manager’s not gonna mind, is she?"
+                },
+                {
+                    "Speaker": "Yun",
+                    "Text": "Ah- but if you’re doing something, that’s fine. I’m not going to be super devastated. Haha.",
+                    "ThoughtWorldText": "Please say no."
+                },
+                {
+                    "Speaker": "Cam",
+                    "Text": "Oh ah- sorry. I think we’re both going to be studying tonight. Big test coming up, you know? Ehehe.",
+                    "ThoughtWorldText": "Would you just go away?",
+                    "Options": [
+                        {
+                            "Text": "I think… I’ll be free for tonight.",
+                            "Dialogues": [
+                                {
+                                    "Speaker": "Yun",
+                                    "Text": "Ah- that’s good to hear.",
+                                    "ThoughtWorldText": "Yess~"
+                                },
+                                {
+                                    "Speaker": "Yun",
+                                    "Text": "Then… See you at six?",
+                                    "ThoughtWorldText": "Wonder what good restaurants there are around here…"
+                                },
+                                {
+                                    "Speaker": "MC",
+                                    "Text": "Yeah. Sounds good.",
+                                    "ThoughtWorldText": "Wonder what good restaurants there are around here…"
+                                },
+                                {
+                                    "Speaker": "Cam",
+                                    "Text": "Have fun, you two!",
+                                    "ThoughtWorldText": "…"
+                                }
+                            ]
+                        },
+                        {
+                            "Text": "Yeah, I should really study…",
+                            "Dialogues": [
+                                {
+                                    "Speaker": "Cam",
+                                    "Text": "Sorry, Yun...",
+                                    "ThoughtWorldText": "Hah…"
+                                },
+                                {
+                                    "Speaker": "Yun",
+                                    "Text": "Oh… That’s a shame…",
+                                    "ThoughtWorldText": "Eh?"
+                                },
+                                {
+                                    "Speaker": "MC",
+                                    "Text": "Maybe next time, okay? Let me know when you’re free.",
+                                    "ThoughtWorldText": "Yeah. The next time. Next time."
+                                },
+                                {
+                                    "Speaker": "MC",
+                                    "Text": "I’ll take a look at my schedule."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Speaker": "MC",
+                    "Text": "Come on, let’s get to class."
                 }
             ]
         }

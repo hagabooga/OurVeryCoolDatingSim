@@ -23,12 +23,13 @@ namespace CameronsWorld.Utility
             sources.Clear();
         }
 
-        public AudioSource Play(AudioClip clip)
+        public AudioSource Play(AudioClip clip, bool loop = true)
         {
             var source = gameObject.AddComponent<AudioSource>();
             source.clip = clip;
             source.Play();
             sources.Add(source);
+            source.loop = loop;
             return source;
         }
     }

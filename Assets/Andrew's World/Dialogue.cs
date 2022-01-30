@@ -300,7 +300,7 @@ public class Dialogue : MonoBehaviour
             else
             {
                 realWorldDoubleOption.SetActive(true);
-                realWorldDoubleOption.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = realWorldOptions[0].Text;
+                realWorldDoubleOption.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = realWorldOptions[0].Text;
                 realWorldDoubleOption.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = realWorldOptions[1].Text;
             }
         }
@@ -340,6 +340,12 @@ public class Dialogue : MonoBehaviour
                 break;
             case GlobalVars.SpecialAction.TheClockIsTicking:
                 theClockIsTicking.Activate();
+                break;
+            case GlobalVars.SpecialAction.RemoveCharacters:
+                foreach (var x in new[] { realCam, thoughtCam, realYun, thoughtYun })
+                {
+                    x.gameObject.SetActive(false);
+                }
                 break;
         }
     }

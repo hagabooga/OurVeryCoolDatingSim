@@ -404,6 +404,34 @@ PrefabInstance:
       propertyPath: dialogueBoxes.Array.data[2]
       value: 
       objectReference: {fileID: 21300000, guid: c32350805a799954b85852fc0b840d64, type: 3}
+    - target: {fileID: 3407950490026699815, guid: 404a484dc9e7d404db1248933873aa27, type: 3}
+      propertyPath: backgroundArtRealWorld.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407950490026699815, guid: 404a484dc9e7d404db1248933873aa27, type: 3}
+      propertyPath: backgroundArtRealWorld.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 58e1a36871f14cc4bb29b32a4a69fd2f, type: 3}
+    - target: {fileID: 3407950490026699815, guid: 404a484dc9e7d404db1248933873aa27, type: 3}
+      propertyPath: backgroundArtRealWorld.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: dc561e633323f374f8703feec76cc1cd, type: 3}
+    - target: {fileID: 3407950490026699815, guid: 404a484dc9e7d404db1248933873aa27, type: 3}
+      propertyPath: backgroundArtRealWorld.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 58e1a36871f14cc4bb29b32a4a69fd2f, type: 3}
+    - target: {fileID: 3407950490026699815, guid: 404a484dc9e7d404db1248933873aa27, type: 3}
+      propertyPath: backgroundArtThoughtWorld.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407950490026699815, guid: 404a484dc9e7d404db1248933873aa27, type: 3}
+      propertyPath: backgroundArtThoughtWorld.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4bc048b98ef0beb4fad5c2bf4c64e7b8, type: 3}
+    - target: {fileID: 3407950490026699815, guid: 404a484dc9e7d404db1248933873aa27, type: 3}
+      propertyPath: backgroundArtThoughtWorld.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 73fcbb736b56e0b429047cd408714073, type: 3}
     - target: {fileID: 3982439360201692895, guid: 404a484dc9e7d404db1248933873aa27, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

@@ -24,13 +24,16 @@ public static class GlobalVars
     public enum SpecialAction
     {
         Tutorial,
-        TheClockIsTicking
+        TheClockIsTicking,
+        RemoveCharacters
     }
 
     public enum Background
     {
-        BlackScreen = 0,
-        AlarmClock = 1,
+        BlackScreen,
+        AlarmClock,
+        OutsideSchool,
+        Bedroom,
 
     }
 
