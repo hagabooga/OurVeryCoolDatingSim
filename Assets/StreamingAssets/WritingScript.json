@@ -53,12 +53,12 @@
                     "ThoughtWorldText": "Urgh… My fuckin' head…",
                     "Options": [
                         {
-                            "Text": "Good morning… ",
+                            "Text": "Good morning…",
                             "Dialogues": [
                                 {
                                     "Speaker": "Cam",
-                                    "Text": "The hell was that? Am I on something today? Am I still dreaming…?",
-                                    "ThoughtWorldText": "Shit- did they notice?"
+                                    "Text": "Good is right! Check out how sunny it is outside!",
+                                    "ThoughtWorldText": "I really ought to get more sleep… "
                                 }
                             ]
                         }
@@ -69,8 +69,8 @@
                             "Dialogues": [
                                 {
                                     "Speaker": "Cam",
-                                    "Text": "Good is right! Check out how sunny it is outside!",
-                                    "ThoughtWorldText": "I really ought to get more sleep… "
+                                    "Text": "Wha? Uh, yeah! Perfectly healthy, see?",
+                                    "ThoughtWorldText": "Shit- did they notice?"
                                 }
                             ]
                         }
@@ -82,14 +82,12 @@
                     "ThoughtWorldText": "Can't you buy anything other than eggs…?"
                 },
                 {
-                    "Background": "BlackScreen"
-                },
-                {
-                    "Speaker": "Cam",
+                    "Background": "BlackScreen",
+                    "Speaker": "MC",
                     "Text": "…So, I guess I can… read minds or something now? Maybe I'm just hallucinating. Wouldn't be the first time."
                 },
                 {
-                    "Speaker": "Cam",
+                    "Speaker": "MC",
                     "Text": "Whatever. I'll figure this out later. Maybe I can just sleep it off. For now I'll just try not to act like an insane person."
                 },
                 {
