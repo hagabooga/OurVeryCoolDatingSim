@@ -12,18 +12,20 @@ namespace CameronsWorld
         {
             SpotlightModel Model { get; }
             IView View { get; }
+            public Spotlight Spotlight { get; }
             Vector2 RedWorldStartingPosition { get; }
 
             bool firstTimeleftShiftPressed = false;
             IList<Tween> doOnceWhenLeftShiftPressedTweens = new List<Tween>();
 
-            public Presenter(SpotlightModel model, IView view)
+            public Presenter(SpotlightModel model, IView view, Spotlight spotlight)
             {
                 Model = model;
                 View = view;
+                Spotlight = spotlight;
                 View.ToggleLensActive(false);
                 RedWorldStartingPosition = View.RedWorldGlobalPosition;
-                Instance.StartCoroutine(Update());
+                Spotlight.StartCoroutine(Update());
             }
 
             IEnumerator Update()
@@ -56,7 +58,7 @@ namespace CameronsWorld
                 {
                     if (!firstTimeleftShiftPressed)
                     {
-                        Instance.StartCoroutine(DoOnceWhenLeftShiftPressed());
+                        Spotlight.StartCoroutine(DoOnceWhenLeftShiftPressed());
                     }
                     View.SetLensGlobalPosition(Input.mousePosition);
                     View.SetRedWorldPosition(RedWorldStartingPosition);
