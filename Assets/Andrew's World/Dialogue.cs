@@ -147,6 +147,7 @@ public class Dialogue : MonoBehaviour
         CameronsWorld.Dialogue currentDialogue = writingScript.GetNext();
         Debug.Log("real options a: " + currentDialogue.Options.Count);
         Debug.Log("thought options a" + currentDialogue.ThoughtWorldOptions.Count);
+        ActivateSpecialAction(currentDialogue.SpecialAction);
         if (currentDialogue != null)
         {
             SetDialogueValues(currentDialogue);
@@ -167,6 +168,7 @@ public class Dialogue : MonoBehaviour
             return;
         }
         CameronsWorld.Dialogue currentDialogue = writingScript.GetNext(optionIndex, isThoughtWorldOption);
+        ActivateSpecialAction(currentDialogue.SpecialAction);
         Debug.Log("real options s: " + currentDialogue.Options.Count);
         Debug.Log("thought options s" + currentDialogue.ThoughtWorldOptions.Count);
         if (currentDialogue != null)
@@ -262,11 +264,16 @@ public class Dialogue : MonoBehaviour
         MoveToNextDialogue(optionIndexEncrypted % 2, optionIndexEncrypted / 2 > 0);
     }
 
-    public void ActivateSpecialAction(GlobalVars.SpecialAction action)
+    public void ActivateSpecialAction(GlobalVars.SpecialAction? action)
     {
+        if (!action.HasValue)
+        {
+            return;
+        }
         switch (action)
         {
             case GlobalVars.SpecialAction.Tutorial:
+                print("TUTORIAL");
                 break;
             case GlobalVars.SpecialAction.TheClockIsTicking:
                 break;
