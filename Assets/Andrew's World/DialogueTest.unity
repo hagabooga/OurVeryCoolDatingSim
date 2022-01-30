@@ -293,6 +293,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2711110285807687654, guid: 404a484dc9e7d404db1248933873aa27, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+    - target: {fileID: 2711110285807687654, guid: 404a484dc9e7d404db1248933873aa27, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
     - target: {fileID: 2714506643489001119, guid: 404a484dc9e7d404db1248933873aa27, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -333,6 +341,14 @@ PrefabInstance:
       propertyPath: m_margin.w
       value: 92.65982
       objectReference: {fileID: 0}
+    - target: {fileID: 3407950489621866694, guid: 404a484dc9e7d404db1248933873aa27, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+    - target: {fileID: 3407950489621866694, guid: 404a484dc9e7d404db1248933873aa27, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
     - target: {fileID: 3407950490026699813, guid: 404a484dc9e7d404db1248933873aa27, type: 3}
       propertyPath: m_Name
       value: DialogueFrame
@@ -782,6 +798,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5244027234647852197, guid: 404a484dc9e7d404db1248933873aa27, type: 3}
   m_PrefabInstance: {fileID: 1059209278}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1523820046 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8246396404556344471, guid: 404a484dc9e7d404db1248933873aa27, type: 3}
+  m_PrefabInstance: {fileID: 1059209278}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1523820050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523820046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &1533491302
 GameObject:
   m_ObjectHideFlags: 0
