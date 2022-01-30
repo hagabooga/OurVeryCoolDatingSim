@@ -86,7 +86,7 @@ public class Dialogue : MonoBehaviour
         }
         if (realWorldDialogueText.Length > thoughtWorldDialogueText.Length)
         {
-            for (int i = minLength + 1; i < realWorldDialogueText.Length; i++)
+            for (int i = minLength; i < realWorldDialogueText.Length; i++)
             {
                 realWorldText += realWorldDialogueText[i];
                 realWorldTextBoxText.SetText(realWorldText);
@@ -94,7 +94,7 @@ public class Dialogue : MonoBehaviour
             }
         } else
         {
-            for (int i = minLength + 1; i < thoughtWorldDialogueText.Length; i++)
+            for (int i = minLength; i < thoughtWorldDialogueText.Length; i++)
             {
                 thoughtWorldText += thoughtWorldDialogueText[i];
                 thoughtWorldTextBoxText.SetText(thoughtWorldText);
