@@ -1,0 +1,45 @@
+{
+    "name": "DialogueActions",
+    "maps": [
+        {
+            "name": "DialogueBox",
+            "id": "6c8745dd-f41d-44ab-b1b2-e0cea3f8cb2e",
+            "actions": [
+                {
+                    "name": "Continue",
+                    "type": "Button",
+                    "id": "9864ebc7-11ae-425b-abe7-3b3b8f0bac70",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "990f8559-7354-4b47-8a1a-e104767bc252",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Continue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "524700ea-c550-4605-b359-e032d34a0111",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Continue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
