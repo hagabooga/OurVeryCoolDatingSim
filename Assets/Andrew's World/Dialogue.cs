@@ -7,6 +7,7 @@ using System;
 using TMPro;
 using CameronsWorld;
 using CameronsWorld.Utility;
+using DG.Tweening;
 
 public class Dialogue : MonoBehaviour
 {
@@ -33,6 +34,8 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private GameObject realWorldDoubleOption;
     [SerializeField] private GameObject thoughtWorldDoubleOption;
 
+    [SerializeField] Image realCam, thoughtCam, realYun, thoughtYun;
+
 
     // references to UI elements
     [SerializeField] private List<Sprite> dialogueBoxes; // first 3 are chars, 4th is headerless, 5th is thought world, 6th is thought world headerless
@@ -40,7 +43,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private List<Sprite> backgroundArtThoughtWorld;
     [SerializeField] private List<Sprite> continueButtons; // first 3 are chars, 4th is default
 
-
+    [SerializeField] List<Sprite> yunSprites;
     [SerializeField] List<AudioClip> backgroundMusics;
 
 
@@ -49,6 +52,7 @@ public class Dialogue : MonoBehaviour
 
 
     [SerializeField] TheClockIsTicking theClockIsTicking;
+    [SerializeField] Tutorial tutorial;
 
 
     private DialogueActions dialogueActions;
@@ -198,6 +202,34 @@ public class Dialogue : MonoBehaviour
         SetDialogueSpeaker(dialogue.Speaker);
         SetDialogueBackground(dialogue.Background);
         SetDialogueMusic(dialogue.Music);
+        SetCharacterAppear(dialogue.CharacterAppear);
+    }
+
+    private void SetCharacterAppear(GlobalVars.Character? characterAppear)
+    {
+        if (!characterAppear.HasValue)
+        {
+            return;
+        }
+        switch (characterAppear.Value)
+        {
+            case GlobalVars.Character.Cam:
+                foreach (var cam in new[] { realCam, thoughtCam })
+                {
+                    cam.gameObject.SetActive(true);
+                    cam.rectTransform.anchoredPosition = new Vector2(1000, -25);
+                    cam.rectTransform.DOAnchorPosX(-130, 1);
+                }
+                break;
+            case GlobalVars.Character.Yun:
+                foreach (var cam in new[] { realYun, thoughtYun })
+                {
+                    cam.gameObject.SetActive(true);
+                    cam.rectTransform.anchoredPosition = new Vector2(-118, -25);
+                    cam.rectTransform.DOAnchorPosX(650, 1);
+                }
+                break;
+        }
     }
 
     private void SetDialogueMusic(GlobalVars.Music? music)
@@ -304,6 +336,7 @@ public class Dialogue : MonoBehaviour
         switch (action)
         {
             case GlobalVars.SpecialAction.Tutorial:
+                tutorial.Activate();
                 break;
             case GlobalVars.SpecialAction.TheClockIsTicking:
                 theClockIsTicking.Activate();

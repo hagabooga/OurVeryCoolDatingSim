@@ -18,13 +18,14 @@ namespace CameronsWorld.Utility
             foreach (var item in sources)
             {
                 item.Stop();
+                Destroy(item);
             }
             sources.Clear();
         }
 
         public AudioSource Play(AudioClip clip)
         {
-            var source = this.gameObject.AddComponent<AudioSource>();
+            var source = gameObject.AddComponent<AudioSource>();
             source.clip = clip;
             source.Play();
             sources.Add(source);

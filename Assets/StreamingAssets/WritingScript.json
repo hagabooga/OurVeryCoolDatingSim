@@ -17,6 +17,7 @@
                     "Text": "Ah- crap. It's already past seven. I'm gonna miss the bus-"
                 },
                 {
+                    "Speaker": "MC",
                     "SpecialAction": "Tutorial",
                     "ThoughtWorldOptions": [
                         {
@@ -44,11 +45,12 @@
                 },
                 {
                     "Speaker": "MC",
-                    "Text": "Yeah- just barely."
+                    "Text": "Yeah- just barely.",
+                    "Music": "Stop"
                 },
                 {
                     "CharacterAppear": "Cam",
-                    "Music": "Stop",
+                    "Music": "CamsTheme",
                     "Text": "Morning, Sleepy!",
                     "ThoughtWorldText": "Urgh… My fuckin' head…",
                     "Options": [
@@ -91,6 +93,7 @@
                     "Text": "Whatever. I'll figure this out later. Maybe I can just sleep it off. For now I'll just try not to act like an insane person."
                 },
                 {
+                    "Speaker": "MC",
                     "SpecialAction": "TheClockIsTicking"
                 }
             ]

@@ -18,6 +18,7 @@ public static class GlobalVars
     {
         Stop,
         AlarmClock,
+        CamsTheme
     }
 
     public enum SpecialAction

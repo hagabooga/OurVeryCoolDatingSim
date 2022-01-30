@@ -757,6 +757,9 @@ MonoBehaviour:
   phone: {fileID: 7000789959274103316}
   count: {fileID: 573413036}
   prompt: {fileID: 688519788}
+  finalPos: {x: -100, y: -100}
+  startingPos: {x: -860, y: -440}
+  clip: {fileID: 8300000, guid: 67c4346f54b019049924a29bd084de52, type: 3}
 --- !u!1 &7168730787355645099
 GameObject:
   m_ObjectHideFlags: 0
