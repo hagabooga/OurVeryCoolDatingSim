@@ -9,7 +9,7 @@ using CameronsWorld;
 
 public class Dialogue : MonoBehaviour
 {
-    
+
     private float letterDisplayDelay = 0.025f; // speed of letter scroll; decrease to quicken
     [SerializeField] private bool fadesIn = false;
     [SerializeField] private bool fadesOut = false;
@@ -43,16 +43,20 @@ public class Dialogue : MonoBehaviour
     private float currentLetterDisplayDelay = 0f;
     private WritingScript writingScript;
     private bool proceedingDisabled; // stop ppl from proceeding when choices are available
-    private void Awake() {
+    private void Awake()
+    {
         dialogueActions = new DialogueActions();
     }
-    private void OnEnable() {
+    private void OnEnable()
+    {
         dialogueActions.Enable();
     }
-    private void OnDisable() {
+    private void OnDisable()
+    {
         dialogueActions.Disable();
     }
-    private void Start() {
+    private void Start()
+    {
         writingScript = WritingScriptLoader.Load();
         currentLetterDisplayDelay = letterDisplayDelay;
         dialogueActions.DialogueBox.Continue.performed += InteractOnDialogue;
@@ -68,7 +72,8 @@ public class Dialogue : MonoBehaviour
         }*/
 
     }
-    public IEnumerator DisplayDialogue(string realWorldDialogueText, string thoughtWorldDialogueText) {
+    public IEnumerator DisplayDialogue(string realWorldDialogueText, string thoughtWorldDialogueText)
+    {
         if (thoughtWorldDialogueText == null)
             thoughtWorldDialogueText = realWorldDialogueText;
         thoughtWorldContinueButton.SetActive(false);
@@ -77,7 +82,8 @@ public class Dialogue : MonoBehaviour
         string realWorldText = "";
         string thoughtWorldText = "";
         int minLength = realWorldDialogueText.Length > thoughtWorldDialogueText.Length ? thoughtWorldDialogueText.Length : realWorldDialogueText.Length;
-        for (int i = 0; i < minLength; i++) {
+        for (int i = 0; i < minLength; i++)
+        {
             realWorldText += realWorldDialogueText[i];
             thoughtWorldText += thoughtWorldDialogueText[i];
             realWorldTextBoxText.SetText(realWorldText);
@@ -92,7 +98,8 @@ public class Dialogue : MonoBehaviour
                 realWorldTextBoxText.SetText(realWorldText);
                 yield return new WaitForSeconds(currentLetterDisplayDelay);
             }
-        } else
+        }
+        else
         {
             for (int i = minLength; i < thoughtWorldDialogueText.Length; i++)
             {
@@ -108,17 +115,22 @@ public class Dialogue : MonoBehaviour
 
     private void addContinueButtonIfDialogueFollows(GameObject buttonToActivate)
     {
-       buttonToActivate.SetActive(true);
+        buttonToActivate.SetActive(true);
     }
 
-    private void InteractOnDialogue(InputAction.CallbackContext ctx) {
-        if (!realWorldContinueButton.activeSelf || !thoughtWorldContinueButton.activeSelf) {
+    private void InteractOnDialogue(InputAction.CallbackContext ctx)
+    {
+        if (!realWorldContinueButton.activeSelf || !thoughtWorldContinueButton.activeSelf)
+        {
             currentLetterDisplayDelay = 0f;
-        } else {
+        }
+        else
+        {
             MoveToNextDialogue();
         }
     }
-    private void MoveToNextDialogue() {
+    private void MoveToNextDialogue()
+    {
 
         /*if (fadesOut)
         {
@@ -135,7 +147,8 @@ public class Dialogue : MonoBehaviour
         CameronsWorld.Dialogue currentDialogue = writingScript.GetNext();
         Debug.Log("real options a: " + currentDialogue.Options.Count);
         Debug.Log("thought options a" + currentDialogue.ThoughtWorldOptions.Count);
-        if (currentDialogue != null) {
+        if (currentDialogue != null)
+        {
             SetDialogueValues(currentDialogue);
         }
     }
@@ -247,5 +260,16 @@ public class Dialogue : MonoBehaviour
         // 0 = first real option, 1 = second real option, 2 = first thought option, 3 = second thought option
         proceedingDisabled = false;
         MoveToNextDialogue(optionIndexEncrypted % 2, optionIndexEncrypted / 2 > 0);
+    }
+
+    public void ActivateSpecialAction(GlobalVars.SpecialAction action)
+    {
+        switch (action)
+        {
+            case GlobalVars.SpecialAction.Tutorial:
+                break;
+            case GlobalVars.SpecialAction.TheClockIsTicking:
+                break;
+        }
     }
 }
