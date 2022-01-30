@@ -23,7 +23,7 @@ namespace CameronsWorld
                 Model = model;
                 View = view;
                 Spotlight = spotlight;
-                View.ToggleLensActive(false);
+                View.ToggleLensImage(false);
                 RedWorldStartingPosition = View.RedWorldGlobalPosition;
                 Spotlight.StartCoroutine(Update());
             }
@@ -52,7 +52,7 @@ namespace CameronsWorld
             private void PresentLens()
             {
                 bool isLeftShiftPressed = Input.GetKey(KeyCode.LeftShift);
-                View.ToggleLensActive(isLeftShiftPressed);
+                View.ToggleLensImage(isLeftShiftPressed);
                 View.ToggleLensEffectsActive(isLeftShiftPressed);
                 if (isLeftShiftPressed)
                 {

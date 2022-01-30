@@ -9,6 +9,7 @@ namespace CameronsWorld
             float VignetteIntensity { get; set; }
 
             void ToggleLensActive(bool yes);
+            void ToggleLensImage(bool yes);
             void ToggleLensEffectsActive(bool yes);
             void ToggleRealWorldActive(bool yes);
             void ToggleRedWorldActive(bool yes);

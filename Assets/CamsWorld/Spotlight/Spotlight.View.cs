@@ -76,7 +76,10 @@ namespace CameronsWorld
                 RedWorld.transform.position = vector3;
             }
 
-
+            public void ToggleLensImage(bool yes)
+            {
+                Lens.enabled = yes;
+            }
         }
     }
 }
