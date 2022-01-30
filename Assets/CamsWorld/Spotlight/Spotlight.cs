@@ -7,7 +7,7 @@ namespace CameronsWorld
     public partial class Spotlight : MonoBehaviour
     {
         [SerializeField] Canvas realWorld;
-        [SerializeField] Canvas redWorld;
+        [SerializeField] CanvasGroup redWorld;
         [SerializeField] Canvas lensEffects;
         [SerializeField] Image lens;
         [SerializeField] Volume volume;

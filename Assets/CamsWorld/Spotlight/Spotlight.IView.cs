@@ -16,6 +16,7 @@ namespace CameronsWorld
 
             void SetLensGlobalPosition(Vector2 vector2);
             void SetRedWorldPosition(Vector3 vector3);
+            void SetRedWorldAlpha(float alpha);
 
             Vector2 RedWorldGlobalPosition { get; }
         }

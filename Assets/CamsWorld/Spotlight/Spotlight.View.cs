@@ -10,14 +10,14 @@ namespace CameronsWorld
         public class View : IView
         {
             Canvas RealWorld { get; }
-            Canvas RedWorld { get; }
+            CanvasGroup RedWorld { get; }
             Canvas LensEffects { get; }
             Image Lens { get; }
             Volume VolumeProfile { get; }
             Vignette Vignette { get; }
 
             public View(Canvas realWorld,
-                        Canvas redWorld,
+                        CanvasGroup redWorld,
                         Canvas lensEffects,
                         Image lens,
                         Volume volumeProfile)
@@ -79,6 +79,10 @@ namespace CameronsWorld
             public void ToggleLensImage(bool yes)
             {
                 Lens.enabled = yes;
+            }
+            public void SetRedWorldAlpha(float value)
+            {
+                RedWorld.alpha = value;
             }
         }
     }

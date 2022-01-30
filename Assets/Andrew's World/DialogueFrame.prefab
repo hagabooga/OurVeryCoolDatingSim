@@ -835,7 +835,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   realWorld: {fileID: 352703465454488022}
-  redWorld: {fileID: 8378288614889364238}
+  redWorld: {fileID: 3050431552471819854}
   lensEffects: {fileID: 971550788725884077}
   lens: {fileID: 7159794124441741214}
   volume: {fileID: 2827335023832044728}
@@ -1337,6 +1337,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4068919571708275396}
   - component: {fileID: 8378288614889364238}
+  - component: {fileID: 3050431552471819854}
   m_Layer: 0
   m_Name: ThoughtWorld
   m_TagString: Untagged
@@ -1389,6 +1390,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &3050431552471819854
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4017413343439250803}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &4909297913515124242
 GameObject:
   m_ObjectHideFlags: 0
@@ -2106,7 +2119,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &3306875019819592946
 MonoBehaviour:
   m_ObjectHideFlags: 0

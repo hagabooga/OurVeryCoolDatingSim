@@ -62,6 +62,7 @@ namespace CameronsWorld
                     }
                     View.SetLensGlobalPosition(Input.mousePosition);
                     View.SetRedWorldPosition(RedWorldStartingPosition);
+                    View.SetRedWorldAlpha(1);
                 }
                 else
                 {
@@ -72,6 +73,7 @@ namespace CameronsWorld
                     doOnceWhenLeftShiftPressedTweens.Clear();
                     View.VignetteIntensity = 0;
                     firstTimeleftShiftPressed = false;
+                    View.SetRedWorldAlpha(0);
                 }
             }
         }
