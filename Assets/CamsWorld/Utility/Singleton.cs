@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,7 @@ namespace CameronsWorld.Utility
 
         public static T Instance => instance;
 
+
         protected virtual void Start()
         {
             if (instance != null && instance != this)
@@ -20,7 +22,7 @@ namespace CameronsWorld.Utility
             else
             {
                 instance = this as T;
-                DontDestroyOnLoad(this.gameObject);
+                // DontDestroyOnLoad(this.gameObject);
             }
         }
     }

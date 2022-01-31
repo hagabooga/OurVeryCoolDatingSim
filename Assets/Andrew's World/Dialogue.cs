@@ -18,6 +18,7 @@ public class Dialogue : MonoBehaviour
     private float letterDisplayDelay = 0.025f; // speed of letter scroll; decrease to quicken
     [SerializeField] private bool fadesIn = false;
     [SerializeField] private bool fadesOut = false;
+    [SerializeField] CanvasGroup mainCanvasGroup;
 
     // references to components
     [SerializeField] private TextMeshProUGUI realWorldTextBoxText = null;
@@ -80,8 +81,8 @@ public class Dialogue : MonoBehaviour
     }
     private void Start()
     {
+        mainCanvasGroup.alpha = 0;
         StartCoroutine(GG());
-
 
         // fade transition
         /*if (fadesIn) {
@@ -95,8 +96,7 @@ public class Dialogue : MonoBehaviour
 
     private IEnumerator GG()
     {
-        string path = Path.Combine(
-                                         Application.streamingAssetsPath,
+        string path = Path.Combine(Application.streamingAssetsPath,
                                          "WritingScript.json");
         UnityWebRequest www = UnityWebRequest.Get(path);
         www.SendWebRequest();
@@ -111,6 +111,7 @@ public class Dialogue : MonoBehaviour
         dialogueActions.DialogueBox.Continue.performed += InteractOnDialogue;
         CameronsWorld.Dialogue currentDialogue = writingScript.GetNext();
         SetDialogueValues(currentDialogue);
+        mainCanvasGroup.alpha = 1;
     }
 
     public IEnumerator DisplayDialogue(string realWorldDialogueText, string thoughtWorldDialogueText)
@@ -266,11 +267,10 @@ public class Dialogue : MonoBehaviour
         switch (music.Value)
         {
             case GlobalVars.Music.Stop:
-                SoundManager.Instance.StopAll();
+                StartCoroutine(SoundManager.Instance.FadeOut());
                 break;
             default:
-                SoundManager.Instance.StopAll();
-                SoundManager.Instance.Play(backgroundMusics[((int)music.Value)]);
+                StartCoroutine(SoundManager.Instance.FadeOutThenIn(backgroundMusics[((int)music.Value)]));
                 break;
         }
     }
@@ -373,8 +373,44 @@ public class Dialogue : MonoBehaviour
                     x.gameObject.SetActive(false);
                 }
                 break;
+            case GlobalVars.SpecialAction.CamBlush:
+                realCam.sprite = camSprites[1];
+                thoughtCam.sprite = camSprites[14];
+                StartCoroutine(DoPopAnim(realCam.rectTransform));
+                break;
+            case GlobalVars.SpecialAction.CamCheerful:
+                realCam.sprite = camSprites[2];
+                thoughtCam.sprite = camSprites[15];
+                StartCoroutine(DoPopAnim(realCam.rectTransform));
+                break;
+            case GlobalVars.SpecialAction.CamNeutral:
+                realCam.sprite = camSprites[4];
+                thoughtCam.sprite = camSprites[16];
+                StartCoroutine(DoPopAnim(realCam.rectTransform));
+                break;
+            case GlobalVars.SpecialAction.YunOpenMouth:
+                realYun.sprite = yunSprites[3];
+                thoughtYun.sprite = yunSprites[1];
+                StartCoroutine(DoPopAnim(realYun.rectTransform));
+                break;
+            case GlobalVars.SpecialAction.YunOpenSmile:
+                realYun.sprite = yunSprites[4];
+                thoughtYun.sprite = yunSprites[1];
+                StartCoroutine(DoPopAnim(realYun.rectTransform));
+                break;
+            case GlobalVars.SpecialAction.YunSmile:
+                realYun.sprite = yunSprites[2];
+                thoughtYun.sprite = yunSprites[1];
+                StartCoroutine(DoPopAnim(realYun.rectTransform));
+                break;
         }
     }
 
+    private IEnumerator DoPopAnim(RectTransform rectTransform)
+    {
+        yield return
+        rectTransform.DOAnchorPosY(realCam.rectTransform.anchoredPosition.y + 50, 0.3f).WaitForCompletion();
+        yield return rectTransform.DOAnchorPosY(realCam.rectTransform.anchoredPosition.y - 50, 0.3f).WaitForCompletion();
 
+    }
 }

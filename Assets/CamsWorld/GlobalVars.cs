@@ -26,7 +26,13 @@ public static class GlobalVars
     {
         Tutorial,
         TheClockIsTicking,
-        RemoveCharacters
+        RemoveCharacters,
+        CamBlush,
+        CamCheerful,
+        CamNeutral,
+        YunOpenMouth,
+        YunOpenSmile,
+        YunSmile,
     }
 
     public enum Background

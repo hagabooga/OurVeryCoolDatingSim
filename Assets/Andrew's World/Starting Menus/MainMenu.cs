@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using CameronsWorld.Utility;
 
 public class MainMenu : MonoBehaviour
 {
@@ -15,22 +16,13 @@ public class MainMenu : MonoBehaviour
         Credits,
     };
 
-    [SerializeField] Button start, help, credits;
-    [SerializeField] Image fader;
+    [SerializeField] AudioClip clip;
 
     void Start()
     {
-        print("GG");
-        start.onClick.AddListener(() => LoadScene(SceneName.Gameplay));
-        help.onClick.AddListener(() => LoadScene(SceneName.Help));
-        credits.onClick.AddListener(() => LoadScene(SceneName.Credits));
+        SoundManager.Instance.PlayBGM(clip);
+
     }
 
-    private IEnumerator LoadScene(SceneName sceneName)
-    {
-        var tween = fader.DOColor(Color.black, 1);
-        yield return tween.WaitForCompletion();
-        SceneManager.LoadScene(sceneName.ToString());
-    }
 
 }

@@ -82,7 +82,8 @@
                 {
                     "Speaker": "Cam",
                     "Text": "Come on, I made breakfast. They're scrambled today.",
-                    "ThoughtWorldText": "Can't you buy anything other than eggs...?"
+                    "ThoughtWorldText": "Can't you buy anything other than eggs...?",
+                    "SpecialAction": "CamCheerful"
                 },
                 {
                     "Background": "BlackScreen",
@@ -109,6 +110,7 @@
             "Dialogues": [
                 {
                     "CharacterAppear": "Cam",
+                    "SpecialAction": "CamNeutral",
                     "Background": "OutsideSchool",
                     "Speaker": "Cam",
                     "Text": "Waah~! What a nice day. Good to get something other than rain, huh?",
@@ -117,7 +119,8 @@
                 {
                     "Speaker": "Cam",
                     "Text": "...Hey, Valentine's is coming up, right?",
-                    "ThoughtWorldText": "...Should I ask him...?"
+                    "ThoughtWorldText": "...Should I ask him...?",
+                    "SpecialAction": "CamBlush"
                 },
                 {
                     "Speaker": "Cam",
@@ -153,11 +156,6 @@
                             ]
                         }
                     ]
-                },
-                {
-                    "Speaker": "Cam",
-                    "Text": "Ah. I see.",
-                    "ThoughtWorldText": "Wait- maybe it's because of me...? No. No No No- Stop thinking about it."
                 },
                 {
                     "Speaker": "Cam",
@@ -235,6 +233,7 @@
                 {
                     "Speaker": "Yun",
                     "Text": "How are you?",
+                    "SpecialAction": "YunOpenMouth",
                     "ThoughtWorldText": "How are you?",
                     "Options": [
                         {
@@ -284,7 +283,8 @@
                 {
                     "Speaker": "Yun",
                     "Text": "Ah- but if you're doing something, that's fine. I'm not going to be super devastated. Haha.",
-                    "ThoughtWorldText": "Please say no."
+                    "ThoughtWorldText": "Please say no.",
+                    "SpecialAction": "YunOpenSmile"
                 },
                 {
                     "Speaker": "Cam",
