@@ -87,7 +87,8 @@
                 {
                     "Background": "BlackScreen",
                     "Speaker": "MC",
-                    "Text": "...So, I guess I can... read minds or something now? Maybe I'm just hallucinating. Wouldn't be the first time."
+                    "Text": "...So, I guess I can... read minds or something now? Maybe I'm just hallucinating. Wouldn't be the first time.",
+                    "SpecialAction": "RemoveCharacters"
                 },
                 {
                     "Speaker": "MC",
@@ -99,8 +100,7 @@
                 },
                 {
                     "Speaker": "MC",
-                    "SpecialAction": "RemoveCharacters",
-                    "Text": ""
+                    "Text": "..."
                 }
             ]
         },
@@ -213,6 +213,7 @@
                 },
                 {
                     "Speaker": "Yun",
+                    "Music": "YunsTheme",
                     "Text": "MC!",
                     "ThoughtWorldText": "Ah- There they are."
                 },
@@ -278,24 +279,24 @@
                 {
                     "Speaker": "Yun",
                     "Text": "My shift got cancelled tonight, so I thought maybe we could hang out.",
-                    "ThoughtWorldText": "My manager’s not gonna mind, is she?"
+                    "ThoughtWorldText": "My manager's not gonna mind, is she?"
                 },
                 {
                     "Speaker": "Yun",
-                    "Text": "Ah- but if you’re doing something, that’s fine. I’m not going to be super devastated. Haha.",
+                    "Text": "Ah- but if you're doing something, that's fine. I'm not going to be super devastated. Haha.",
                     "ThoughtWorldText": "Please say no."
                 },
                 {
                     "Speaker": "Cam",
-                    "Text": "Oh ah- sorry. I think we’re both going to be studying tonight. Big test coming up, you know? Ehehe.",
+                    "Text": "Oh ah- sorry. I think we're both going to be studying tonight. Big test coming up, you know? Ehehe.",
                     "ThoughtWorldText": "Would you just go away?",
                     "Options": [
                         {
-                            "Text": "I think… I’ll be free for tonight.",
+                            "Text": "I think… I'll be free for tonight.",
                             "Dialogues": [
                                 {
                                     "Speaker": "Yun",
-                                    "Text": "Ah- that’s good to hear.",
+                                    "Text": "Ah- that's good to hear.",
                                     "ThoughtWorldText": "Yess~"
                                 },
                                 {
@@ -325,17 +326,17 @@
                                 },
                                 {
                                     "Speaker": "Yun",
-                                    "Text": "Oh… That’s a shame…",
+                                    "Text": "Oh… That's a shame…",
                                     "ThoughtWorldText": "Eh?"
                                 },
                                 {
                                     "Speaker": "MC",
-                                    "Text": "Maybe next time, okay? Let me know when you’re free.",
+                                    "Text": "Maybe next time, okay? Let me know when you're free.",
                                     "ThoughtWorldText": "Yeah. The next time. Next time."
                                 },
                                 {
                                     "Speaker": "MC",
-                                    "Text": "I’ll take a look at my schedule."
+                                    "Text": "I'll take a look at my schedule."
                                 }
                             ]
                         }
@@ -343,7 +344,12 @@
                 },
                 {
                     "Speaker": "MC",
-                    "Text": "Come on, let’s get to class."
+                    "Text": "Come on, let's get to class."
+                },
+                {
+                    "Background": "BlackScreen",
+                    "Speaker": "MC",
+                    "Text": "..."
                 }
             ]
         }

@@ -8,6 +8,9 @@ using TMPro;
 using CameronsWorld;
 using CameronsWorld.Utility;
 using DG.Tweening;
+using System.IO;
+using UnityEngine.Networking;
+using System.Text.Json;
 
 public class Dialogue : MonoBehaviour
 {
@@ -43,11 +46,15 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private List<Sprite> backgroundArtThoughtWorld;
     [SerializeField] private List<Sprite> continueButtons; // first 3 are chars, 4th is default
 
+    [SerializeField] List<Sprite> camSprites;
     [SerializeField] List<Sprite> yunSprites;
     [SerializeField] List<AudioClip> backgroundMusics;
 
 
+    void OnValidate()
+    {
 
+    }
 
 
 
@@ -73,11 +80,8 @@ public class Dialogue : MonoBehaviour
     }
     private void Start()
     {
-        writingScript = WritingScriptLoader.Load();
-        currentLetterDisplayDelay = letterDisplayDelay;
-        dialogueActions.DialogueBox.Continue.performed += InteractOnDialogue;
-        CameronsWorld.Dialogue currentDialogue = writingScript.GetNext();
-        SetDialogueValues(currentDialogue);
+        StartCoroutine(GG());
+
 
         // fade transition
         /*if (fadesIn) {
@@ -88,6 +92,27 @@ public class Dialogue : MonoBehaviour
         }*/
 
     }
+
+    private IEnumerator GG()
+    {
+        string path = Path.Combine(
+                                         Application.streamingAssetsPath,
+                                         "WritingScript.json");
+        UnityWebRequest www = UnityWebRequest.Get(path);
+        www.SendWebRequest();
+        int i = 0;
+        while (!www.downloadHandler.isDone)
+        {
+            yield return null;
+        }
+        var x = JsonSerializer.Deserialize<JsonWritingScript>(www.downloadHandler.text);
+        writingScript = new WritingScript(x);
+        currentLetterDisplayDelay = letterDisplayDelay;
+        dialogueActions.DialogueBox.Continue.performed += InteractOnDialogue;
+        CameronsWorld.Dialogue currentDialogue = writingScript.GetNext();
+        SetDialogueValues(currentDialogue);
+    }
+
     public IEnumerator DisplayDialogue(string realWorldDialogueText, string thoughtWorldDialogueText)
     {
         if (thoughtWorldDialogueText == null)
@@ -226,7 +251,7 @@ public class Dialogue : MonoBehaviour
                 {
                     cam.gameObject.SetActive(true);
                     cam.rectTransform.anchoredPosition = new Vector2(-118, -25);
-                    cam.rectTransform.DOAnchorPosX(650, 1);
+                    cam.rectTransform.DOAnchorPosX(780, 1);
                 }
                 break;
         }
@@ -244,6 +269,7 @@ public class Dialogue : MonoBehaviour
                 SoundManager.Instance.StopAll();
                 break;
             default:
+                SoundManager.Instance.StopAll();
                 SoundManager.Instance.Play(backgroundMusics[((int)music.Value)]);
                 break;
         }

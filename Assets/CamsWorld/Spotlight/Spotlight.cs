@@ -10,7 +10,7 @@ namespace CameronsWorld
         [SerializeField] Canvas realWorld;
         [SerializeField] CanvasGroup redWorld;
         [SerializeField] Canvas lensEffects;
-        [SerializeField] Image lens;
+        [SerializeField] Image lens, border;
         [SerializeField] Volume volume;
         [SerializeField] SpotlightModel model;
         [SerializeField] TMP_Text phoneCount, thoughtPhoneCount;
@@ -24,7 +24,8 @@ namespace CameronsWorld
                                   lens,
                                   volume,
                                   phoneCount,
-                                thoughtPhoneCount
+                                thoughtPhoneCount,
+                                border
                                   );
             Presenter presenter = new Presenter(model, view, this);
         }

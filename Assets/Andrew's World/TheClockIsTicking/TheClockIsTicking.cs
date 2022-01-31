@@ -20,7 +20,7 @@ public class TheClockIsTicking : MonoBehaviour
 
     private IEnumerator DoActivate()
     {
-        SoundManager.Instance.Play(clip);
+        SoundManager.Instance.Play(clip, false);
         phone.gameObject.SetActive(true);
         phone.rectTransform.anchoredPosition = startingPos;
         yield return phone.rectTransform.DOSizeDelta(new Vector2(250, 250), 0.8f).WaitForCompletion();

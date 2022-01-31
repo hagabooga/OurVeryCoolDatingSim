@@ -20,7 +20,6 @@ namespace CameronsWorld
             void SetRedWorldAlpha(float alpha);
             void SetPhoneCounter(int count);
 
-
             Vector2 RedWorldGlobalPosition { get; }
         }
     }

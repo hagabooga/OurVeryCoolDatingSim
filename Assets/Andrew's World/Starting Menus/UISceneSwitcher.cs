@@ -11,8 +11,8 @@ public class UISceneSwitcher : MonoBehaviour
     private enum SceneType
     {
         MainMenu,
-        Help, 
-        Gameplay,
+        Help,
+        DialogueTest,
         Credits,
     };
 
@@ -24,7 +24,8 @@ public class UISceneSwitcher : MonoBehaviour
     public void Awake()
     {
         Button thisButton = GetComponent<Button>();
-        thisButton.onClick.AddListener(() => {
+        thisButton.onClick.AddListener(() =>
+        {
             StartCoroutine(loadScene());
         });
     }

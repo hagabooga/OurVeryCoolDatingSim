@@ -17,6 +17,7 @@ namespace CameronsWorld
             Volume VolumeProfile { get; }
             public TMP_Text PhoneCount { get; }
             public TMP_Text ThoughtPhoneCount { get; }
+            public Image Border { get; }
             Vignette Vignette { get; }
 
             public View(Canvas realWorld,
@@ -25,7 +26,8 @@ namespace CameronsWorld
                         Image lens,
                         Volume volumeProfile,
                         TMPro.TMP_Text phoneCount,
-                        TMPro.TMP_Text thoughtPhoneCount)
+                        TMPro.TMP_Text thoughtPhoneCount,
+                        Image border)
             {
                 RealWorld = realWorld;
                 RedWorld = redWorld;
@@ -34,6 +36,7 @@ namespace CameronsWorld
                 VolumeProfile = volumeProfile;
                 PhoneCount = phoneCount;
                 ThoughtPhoneCount = thoughtPhoneCount;
+                Border = border;
                 if (VolumeProfile.profile.TryGet<Vignette>(out Vignette vignette))
                 {
                     Vignette = vignette;
@@ -70,6 +73,7 @@ namespace CameronsWorld
             public void ToggleLensActive(bool yes)
             {
                 Lens.gameObject.SetActive(yes);
+                Border.gameObject.SetActive(yes);
             }
 
             public void SetLensGlobalPosition(Vector2 vector2)
@@ -85,6 +89,7 @@ namespace CameronsWorld
             public void ToggleLensImage(bool yes)
             {
                 Lens.enabled = yes;
+                Border.enabled = (yes);
             }
             public void SetRedWorldAlpha(float value)
             {

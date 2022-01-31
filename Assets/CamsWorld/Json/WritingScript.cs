@@ -60,7 +60,7 @@ namespace CameronsWorld
                 Dialogues.Pop();
                 if (!Dialogues.TryPeek(out dialogueRecord))
                 {
-                    Debug.Log("GO TO CREDITS SCENE!!!!!!");
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("Credits", UnityEngine.SceneManagement.LoadSceneMode.Single);
                     return null;
                 }
             }

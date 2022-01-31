@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 using UnityEngine;
+using UnityEngine.Networking;
 
 namespace CameronsWorld
 {
@@ -33,12 +35,7 @@ namespace CameronsWorld
 
         public static WritingScript Load()
         {
-            return new WritingScript(JsonSerializer.Deserialize<JsonWritingScript>(
-                File.ReadAllText(
-                    Path.Combine(
-                        Application.streamingAssetsPath,
-                        "WritingScript.json")))
-            );
+            return null;
         }
     }
 }
