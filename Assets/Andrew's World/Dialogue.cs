@@ -390,17 +390,14 @@ public class Dialogue : MonoBehaviour
                 break;
             case GlobalVars.SpecialAction.YunOpenMouth:
                 realYun.sprite = yunSprites[3];
-                thoughtYun.sprite = yunSprites[1];
                 StartCoroutine(DoPopAnim(realYun.rectTransform));
                 break;
             case GlobalVars.SpecialAction.YunOpenSmile:
                 realYun.sprite = yunSprites[4];
-                thoughtYun.sprite = yunSprites[1];
                 StartCoroutine(DoPopAnim(realYun.rectTransform));
                 break;
             case GlobalVars.SpecialAction.YunSmile:
                 realYun.sprite = yunSprites[2];
-                thoughtYun.sprite = yunSprites[1];
                 StartCoroutine(DoPopAnim(realYun.rectTransform));
                 break;
         }
