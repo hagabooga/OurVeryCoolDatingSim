@@ -56,7 +56,7 @@ namespace CameronsWorld
 
         private void LoadUi()
         {
-            GetFiles(out string uiPath, out IEnumerable<FileInfo> files, "UI", ".png");
+            Helper.GetFiles(out string uiPath, out IEnumerable<FileInfo> files, "UI", ".png", DataFolder, name);
             foreach (var file in files)
             {
                 var nameWithoutExtension = Path.GetFileNameWithoutExtension(file.Name);
@@ -68,8 +68,19 @@ namespace CameronsWorld
 
         private void LoadPoses()
         {
+            string posesPath;
+            IEnumerable<FileInfo> files;
+            try
+            {
+                Helper.GetFiles(out posesPath, out files, "Poses", ".png", DataFolder, name);
+
+            }
+            catch
+            {
+
+                return;
+            }
             poses = new CharacterPoses();
-            GetFiles(out string posesPath, out IEnumerable<FileInfo> files, "Poses", ".png");
             foreach (var file in files)
             {
                 var nameWithoutExtension = Path.GetFileNameWithoutExtension(file.Name);
@@ -84,15 +95,6 @@ namespace CameronsWorld
             }
         }
 
-        private void GetFiles(out string posesPath,
-                              out IEnumerable<FileInfo> files,
-                              string folderToLookIn,
-                              string endsWith)
-        {
-            string path = Path.Combine(DataFolder, name);
-            posesPath = Path.Combine(path, folderToLookIn);
-            files = new DirectoryInfo(posesPath).GetFiles().Where(x => x.Name.EndsWith(endsWith));
-        }
         // #endif
     }
 }
